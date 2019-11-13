@@ -1,4 +1,4 @@
-package andrea.springframework.sfgpetclinic;
+package andrea.springframework.sfgpetclinic.Model;
 
 public class Person {
 
