@@ -39,7 +39,8 @@
     </build>
 
     <scm>
-        <!--to specify my online repository "scm:git + path"-->
         <developerConnection>scm:git:https://github.com/AndreaLuius/sfg-pet-clinic.git</developerConnection>
-    </scm>
+
+      <tag>HEAD</tag>
+  </scm>
 </project>
