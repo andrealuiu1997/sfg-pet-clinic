@@ -2,14 +2,10 @@ package andrea.springframework.sfgperclinic.services;
 
 import andrea.springframework.sfgperclinic.Model.Owner;
 
-import java.util.Set;
 
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner,Long>{
 
-    Owner findByLastName(String lastName);
-    Owner findByID(Long id);
-    Owner save(Owner owner);
+    Owner findByLastName(String LastName);
 
-    Set<Owner> findAll();
 
 }
