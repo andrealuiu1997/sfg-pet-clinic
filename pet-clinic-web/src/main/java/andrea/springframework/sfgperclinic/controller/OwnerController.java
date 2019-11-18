@@ -3,13 +3,13 @@ package andrea.springframework.sfgperclinic.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping({"/vets"})
+@RequestMapping({"/owners"})
 @Controller
-public class VetsController {
+public class OwnerController {
 
     @RequestMapping({"","/","/index","/index.html"})
-    public String listsVets(){
+    public String ownerList(){
 
-        return "vets/index";
+        return "owners/index";
     }
 }
