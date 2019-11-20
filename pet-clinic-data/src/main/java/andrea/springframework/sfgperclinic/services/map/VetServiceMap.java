@@ -2,9 +2,11 @@ package andrea.springframework.sfgperclinic.services.map;
 
 import andrea.springframework.sfgperclinic.Model.Vet;
 import andrea.springframework.sfgperclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {

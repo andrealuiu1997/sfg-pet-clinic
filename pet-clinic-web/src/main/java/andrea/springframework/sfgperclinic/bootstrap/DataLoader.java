@@ -3,8 +3,7 @@ package andrea.springframework.sfgperclinic.bootstrap;
 import andrea.springframework.sfgperclinic.Model.Owner;
 import andrea.springframework.sfgperclinic.Model.Vet;
 import andrea.springframework.sfgperclinic.services.VetService;
-import andrea.springframework.sfgperclinic.services.map.OwnerServiceMap;
-import andrea.springframework.sfgperclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import andrea.springframework.sfgperclinic.services.OwnerService;
@@ -15,11 +14,11 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService owenerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        owenerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired
+    public DataLoader(OwnerService owenerService, VetService vetService) {
+        this.owenerService = owenerService;
+        this.vetService = vetService;
     }
-
 
     @Override
     public void run(String... args) throws Exception {
