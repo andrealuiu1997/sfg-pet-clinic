@@ -1,11 +1,11 @@
 package andrea.springframework.sfgperclinic.services.map;
 
 import andrea.springframework.sfgperclinic.Model.Owner;
-import andrea.springframework.sfgperclinic.services.CrudService;
+import andrea.springframework.sfgperclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -30,5 +30,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
     @Override
     public void deleteByID(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String LastName) {
+        return null;
     }
 }

@@ -1,11 +1,11 @@
 package andrea.springframework.sfgperclinic.services.map;
 
 import andrea.springframework.sfgperclinic.Model.Vet;
-import andrea.springframework.sfgperclinic.services.CrudService;
+import andrea.springframework.sfgperclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
