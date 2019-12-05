@@ -9,9 +9,7 @@ public class Visit extends BaseEntity {
 
 
     //getter and setters
-    public LocalDate getDate() {
-        return date;
-    }
+    public LocalDate getDate() { return date; }
 
     public void setDate(LocalDate date) {
         this.date = date;
@@ -25,9 +23,7 @@ public class Visit extends BaseEntity {
         this.description = description;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
+    public Pet getPet() { return pet; }
 
     public void setPet(Pet pet) {
         this.pet = pet;
