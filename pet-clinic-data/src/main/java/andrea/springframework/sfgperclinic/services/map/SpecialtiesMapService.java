@@ -1,11 +1,13 @@
 package andrea.springframework.sfgperclinic.services.map;
 
 import andrea.springframework.sfgperclinic.Model.Speciality;
-import andrea.springframework.sfgperclinic.services.SpecialtiesServices;
+import andrea.springframework.sfgperclinic.services.SpecialtyService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class SpecialtiesMapService extends AbstractMapService<Speciality,Long> implements SpecialtiesServices {
+@Service
+public class SpecialtiesMapService extends AbstractMapService<Speciality,Long> implements SpecialtyService {
 
     @Override
     public Set<Speciality> findAll() {

@@ -1,10 +1,8 @@
 package andrea.springframework.sfgperclinic.bootstrap;
 
-import andrea.springframework.sfgperclinic.Model.Owner;
-import andrea.springframework.sfgperclinic.Model.Pet;
-import andrea.springframework.sfgperclinic.Model.PetType;
-import andrea.springframework.sfgperclinic.Model.Vet;
+import andrea.springframework.sfgperclinic.Model.*;
 import andrea.springframework.sfgperclinic.services.PetTypeService;
+import andrea.springframework.sfgperclinic.services.SpecialtyService;
 import andrea.springframework.sfgperclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,17 +17,23 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService owenerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialtyService specialtyService;
 
     @Autowired
-    public DataLoader(OwnerService owenerService, VetService vetService,PetTypeService petTypeService) {
+    public DataLoader(OwnerService owenerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialtyService specialtyService) {
         this.owenerService = owenerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        loader();
+    }
 
+    private void loader(){
         PetType dog = new PetType();
         dog.setName("dog");
         PetType saveDogPetType = petTypeService.save(dog);
@@ -72,17 +76,24 @@ public class DataLoader implements CommandLineRunner {
 
         owenerService.save(owner2);
 
+        Speciality speciality = new Speciality();
+        speciality.setDescription("dentistry");
+
+        Speciality speciality2= new Speciality();
+        speciality.setDescription("Surgery");
+
+
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
-
+        vet1.getSpecialities().add(speciality2);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Tim");
         vet2.setLastName("Coanne");
+        vet2.getSpecialities().add(speciality);
 
         vetService.save(vet2);
-
     }
 }
